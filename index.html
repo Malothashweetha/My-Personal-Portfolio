@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maloth Ashweetha | Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg-color: #0c0e11;
+        --card-color: #1a1e22;
+        --primary-color: #4a90e2;
+        --secondary-color: #c9d1d9;
+        --accent-color: #38bdf8;
+        --text-color: #d1d5db;
+        --shadow-color: rgba(0, 0, 0, 0.5);
+        --glow-color: rgba(23, 90, 166, 0.4);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 2000px;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px var(--shadow-color);
+        background: radial-gradient(
+            circle at top,
+            rgba(12, 14, 16, 0.9),
+            rgba(12, 14, 17, 0.9)
+          ),
+          url('https://googleusercontent.com/file_content/0'); /* Placeholder for your background image */
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: auto;
+        padding: 2rem;
+      }
+
+      header.hero {
+        text-align: center;
+        padding: 5rem 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        color: white;
+      }
+
+      .hero h1 {
+        font-size: 5.5rem;
+        color: var(--primary-color);
+        font-weight: bold;
+      }
+
+      .hero .highlight {
+        color: var(--accent-color);
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+        margin: 1rem 0;
+        color: var(--secondary-color);
+      }
+
+      .intro {
+        max-width: 600px;
+        margin: 1rem auto;
+        color: var(--text-color);
+      }
+
+      .buttons {
+        margin-top: 2rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.6rem;
+        margin: 0.5rem;
+        background: var(--accent-color);
+        color: black;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        border: none;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+        background-color: #279ddf;
+      }
+
+      .btn.outline {
+        background: transparent;
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+      }
+      .btn.outline:hover {
+        background: var(--accent-color);
+        color: black;
+      }
+
+      .section {
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .section h2 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+      .section p.subtitle {
+        font-size: 1rem;
+        color: var(--secondary-color);
+        margin-bottom: 3rem;
+      }
+
+      .project-grid,
+      .certification-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .card {
+        background: var(--card-color);
+        border-radius: 1rem;
+        width: 350px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 0 20px var(--shadow-color);
+        overflow: hidden;
+        text-align: left;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 30px var(--glow-color);
+      }
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid #333;
+      }
+
+      .card-content {
+        padding: 1.5rem;
+      }
+
+      .card h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .tags {
+        font-size: 0.9rem;
+        color: #93c5fd;
+        margin-top: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tag {
+        background: #0f1317;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+      }
+
+      .card-buttons {
+        margin-top: 1.5rem;
+        text-align: center;
+        display: flex;
+        gap: 1rem;
+      }
+      .card-buttons .btn {
+        flex: 1;
+        color: white;
+      }
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .skill {
+        background: var(--card-color);
+        padding: 1rem;
+        border-radius: 8px;
+        color: var(--secondary-color);
+        transition: transform 0.3s ease;
+        text-align: center;
+      }
+
+      .skill:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(74, 144, 226, 0.2);
+      }
+
+      .skill span {
+        display: block;
+        font-size: 0.9rem;
+        color: #60a5fa;
+      }
+      .skill i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        color: var(--accent-color);
+      }
+
+      .experience-card,
+      .education-card {
+        background: var(--card-color);
+        padding: 2.5rem;
+        border-radius: 1rem;
+        max-width: 800px;
+        margin: 2rem auto;
+        text-align: left;
+        position: relative;
+      }
+
+      .experience-card h3,
+      .education-card h3 {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+      }
+      .experience-card p,
+      .education-card p {
+        color: var(--secondary-color);
+      }
+      .experience-card strong {
+        color: var(--accent-color);
+      }
+      .experience-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+      .experience-details span {
+        font-size: 0.9rem;
+        color: #999;
+      }
+
+      .experience-card ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 1rem;
+      }
+      .experience-card li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .experience-card li::before {
+        content: '•';
+        color: var(--accent-color);
+        font-size: 1.2rem;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .certification-card {
+        text-align: center;
+      }
+      .certification-card i {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .contact-card {
+        text-align: center;
+      }
+      .contact-card i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .contact-section h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .contact-section p {
+        margin-bottom: 2rem;
+      }
+
+      .message-btn {
+        background: var(--accent-color);
+        color: white;
+        padding: 0.8rem 2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1rem;
+        font-weight: 600;
+      }
+      .message-btn:hover {
+        background: #279ddf;
+      }
+
+      .divider {
+        height: 1px;
+        background: #2c323a;
+        width: 60%;
+        margin: 4rem auto;
+      }
+
+      footer {
+        padding: 2rem;
+        text-align: center;
+        font-size: 0.9rem;
+        color: #6b7280;
+        background: var(--card-color);
+        border-radius: 15px;
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 1rem;
+          margin: 1rem auto;
+        }
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        .card {
+          width: 100%;
+        }
+        .skills {
+          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        }
+        .section {
+          padding: 2rem 1rem;
+        }
+        .experience-details {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <h1>Maloth <span class="highlight">Ashweetha</span></h1>
+        <p class="subtitle">
+          Aspiring Python Developer | Tech Enthusiast | Frontend-Developer
+        </p>
+        <p class="intro">
+          I'm currently a 3rd-year B.Tech student with a deep passion for coding
+          and problem-solving. My expertise spans across Python development,
+          HTML, and CSS, enabling me to build efficient and user-friendly
+          applications. I completed a hands-on internship at Cognifyz
+          Technologies as a Python Developer. I'm also certified in Microsoft
+          Azure AI Fundamentals.
+        </p>
+        <div class="buttons">
+          <a href="assests/ashweetha_CV.pdf" download class="btn"
+            ><i class="fas fa-download"></i> Download Resume</a
+          >
+          <a href="#projects" class="btn outline">View Projects →</a>
+        </div>
+      </header>
+
+      <section class="section" id="projects">
+        <h2>Featured Projects</h2>
+        <p class="subtitle">
+          Here are some of my recent projects that showcase my skills in Python
+          development and frontend.
+        </p>
+        <div class="project-grid">
+          <div class="card">
+            <img
+              src="assests/online Grocery Shopping.jpg"
+              alt="Online Grocery Application"
+            />
+            <div class="card-content">
+              <h3>Online Grocery Application</h3>
+              <p>
+                Developed a frontend online grocery application with a
+                responsive and intuitive user interface.
+              </p>
+              <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <div class="card-buttons">
+                <a href="https://github.com/account" class="btn"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="assests/fake.webp"
+              alt="Fake Profile Detector"
+            />
+            <div class="card-content">
+              <h3>Fake Profile Detector using ANN</h3>
+              <p>
+                Developed a neural network-based model to detect fake social
+                media profiles using Artificial Neural Networks (ANN).
+              </p>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Flask</span>
+                <span class="tag">HTML And CSS</span>
+              </div>
+              <div class="card-buttons">
+                <a href="https://github.com/account" class="btn"
+                  ><i class="fab fa-github"></i> GitHub</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section">
+        <h2>Tech Stack</h2>
+        <p class="subtitle">Technologies and tools I use to bring ideas to life</p>
+        <div class="skills">
+          <div class="skill">
+            <i class="fab fa-python"></i>
+            <h3>Python</h3>
+            <span>Advanced</span>
+          </div>
+          <div class="skill">
+            <i class="fab fa-html5"></i>
+            <h3>HTML</h3>
+            <span>Advanced</span>
+          </div>
+          <div class="skill">
+            <i class="fab fa-css3-alt"></i>
+            <h3>CSS</h3>
+            <span>Advanced</span>
+          </div>
+          <div class="skill">
+            <i class="fas fa-brain"></i>
+            <h3>PowerBI</h3>
+            <span>Intermediate</span>
+          </div>
+          <div class="skill">
+            <i class="fas fa-code"></i>
+            <h3>Web Development</h3>
+            <span>Advanced</span>
+          </div>
+          <div class="skill">
+            <i class="fab fa-git-alt"></i>
+            <h3>Git </h3>
+            <span>Intermediate</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section">
+        <h2>Experience</h2>
+        <p class="subtitle">My professional journey and hands-on experience</p>
+        <div class="experience-card">
+          <div class="experience-details">
+            <div>
+              <h3>Python Developer Intern</h3>
+              <p><strong>Cognifyz Technologies</strong> | Remote</p>
+            </div>
+            <span>Internship Period 2 months</span>
+          </div>
+          <p>
+            Completed a comprehensive hands-on internship focusing on Python
+            development. Gained practical experience in software development
+            practices and contributed to real-world projects.
+          </p>
+          <ul>
+            <li>Python application development</li>
+            <li>Code optimization and debugging</li>
+            <li>Collaborative project work</li>
+          </ul>
+        </div>
+         <div class="experience-card">
+          <div class="experience-details">
+            <div>
+              <h3>Junior Developer</h3>
+              <p><strong>Skilltimate Technologies</strong> | Remote</p>
+            </div>
+            <span>Internship Period 3 months</span>
+          </div>
+          <p>
+            Completed a comprehensive hands-on internship as ajunior developer ,
+            gaining experience in real-time software development projects.
+          </p>
+          <ul>
+            <li>Numpy</li>
+            <li>Pandas</li>
+            <li>Matplotlib</li>
+          </ul>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section">
+        <h2>Education</h2>
+        <p class="subtitle">My academic background</p>
+        <div class="education-card">
+          <div class="experience-details">
+            <div>
+              <h3>Bachelor of Technology (B.Tech)</h3>
+              <p>Computer Science and Engineering</p>
+            </div>
+            <span>3rd Year (Currently Pursuing) (MR) Deemed to be University</span>
+          </div>
+          <p>
+            Currently in my third year of Computer Science and Engineering,
+            focusing on software development, algorithms, and emerging
+            technologies in frontend and python developer.
+          </p>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section">
+        <h2>Certifications</h2>
+        <p class="subtitle">Professional certifications that validate my expertise</p>
+        <div class="certification-grid">
+          <div class="card certification-card">
+            <div class="card-content">
+              <i class="fas fa-award"></i>
+              <h3>Microsoft Certified: Azure AI Fundamentals</h3>
+              <p>
+                Demonstrated foundational knowledge of machine learning and
+                artificial intelligence concepts and related Microsoft Azure services.
+              </p>
+              <div class="tags">
+                <span class="tag">AI</span>
+                <span class="tag">ML</span>
+                <span class="tag">Ethics</span>
+              </div>
+              <a href="assests/microsoft.pdf" class="btn"
+                ><i class="fas fa-certificate"></i> Verify</a
+              >
+            </div>
+          </div>
+          <div class="card certification-card">
+            <div class="card-content">
+              <i class="fas fa-chart-bar"></i>
+              <h3>Data Analysis by Deloitte</h3>
+              <p>
+                Hands-on data analysis with Excel, SQL, and business
+                visualization tools.
+              </p>
+              <div class="tags">
+                <span class="tag">Excel</span>
+                <span class="tag">Data visualization</span>
+                <span class="tag">BI Tools</span>
+              </div>
+              <a href="assests/deloitte .pdf" class="btn"
+                ><i class="fas fa-certificate"></i> Verify</a
+              >
+            </div>
+          </div>
+          <div class="card certification-card">
+            <div class="card-content">
+              <i class="fas fa-chart-bar"></i>
+              <h3>Software Engineering Job Simulation</h3>
+              <p>
+                Hands-on Software Engineering Job Simulation with Architecture, development,Testing
+                and agile.
+              </p>
+              <div class="tags">
+                <span class="tag">Architecture</span>
+                <span class="tag">development</span>
+                <span class="tag">Testing, Aglie</span>
+              </div>
+              <a href="assests/ACCENTURE.pdf" class="btn"
+                ><i class="fas fa-certificate"></i> Verify</a
+              >
+            </div>
+          </div>
+          <div class="card certification-card">
+            <div class="card-content">
+              <i class="fas fa-chart-bar"></i>
+              <h3>GenAI for Everyone</h3>
+              <p>
+                Hands-on GenAI for Everyone with generative AI for Marketing 
+              </p>
+              <div class="tags">
+                <span class="tag">GenAI</span>
+              </div>
+              <a href="assests/vidhya.pdf" class="btn"
+                ><i class="fas fa-certificate"></i> Verify</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="section" id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-links">
+          <div class="card contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>malothashweetha@gmail.com</p>
+          </div>
+          <div class="card contact-card">
+            <i class="fab fa-linkedin"></i>
+            <h3>LinkedIn</h3>
+            <p>Ashweetha Maloth</p>
+            <a
+              href="https://www.linkedin.com/in/ashweetha-maloth-72ab71348?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              class="btn"
+              >View Profile</a
+            >
+          </div>
+          <div class="card contact-card">
+            <i class="fab fa-github"></i>
+            <h3>GitHub</h3>
+            <p>Malothashweetha</p>
+            <a href="https://github.com/account" class="btn">View Profile</a>
+          </div>
+        </div>
+      </section>
+      
+      <div class="divider"></div>
+      
+      <section class="section contact-section">
+          <h3>Interested in my work?</h3>
+          <p>Download my resume to learn more about my experience, skills, and projects. Let's discuss how we can work together!</p>
+          <a href="assests/ashweetha_CV.pdf" download class="btn"
+            ><i class="fas fa-download"></i> Download Resume</a
+          >
+      </section>
+      <footer class="footer">
+  <div class="footer-container">
+    <p class="footer-text">Send me messages</p>
+    <a href="mailto:malothashweetha@gmail.com" class="message-button">Contact Me</a>
+    </div>
+</footer>
+      <footer>
+        <p>© 2025 Maloth Ashweetha. All rights reserved.</p>
+        <p>Built using HTML, CSS</p>
+      </footer>
+    </div>
+  </body>
+</html>
